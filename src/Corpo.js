@@ -6,10 +6,15 @@ import Stories from "./Stories";
 
 export default function Corpo() {
     return (
-        <div>
+        <div class='corpo'>
             <div class="esquerda">
-                <Stories />
-                <Posts />
+                <div class='stories'>
+                    <Stories />
+                </div>
+                <div class='posts'>
+                    <Posts />
+                </div>
+
             </div>
             <SideBar />
         </div>
