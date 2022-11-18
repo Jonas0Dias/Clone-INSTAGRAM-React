@@ -8,9 +8,7 @@ export default function Corpo() {
     return (
         <div class='corpo'>
             <div class="esquerda">
-                <div class='stories'>
-                    <Stories />
-                </div>
+                <Stories/>
                 <div class='posts'>
                     <Posts />
                 </div>
