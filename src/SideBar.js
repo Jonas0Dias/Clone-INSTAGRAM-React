@@ -4,7 +4,7 @@ import Usuario from "./Usuario";
 export default function SideBar() {
     return (
         <div class='sidebar'>
-            <Usuario />
+            <Usuario imagem='assets/img/eu.jpg' usuario='jonas_dias.27' nome='Jonas Dias' />
             <Sugestoes />
             <div class="links">
                 Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •

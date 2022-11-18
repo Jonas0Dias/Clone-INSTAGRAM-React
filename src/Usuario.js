@@ -1,14 +1,21 @@
-export default function Usuario(){
+export default function Usuario(props){
+
+
+
     return(
         <div class="usuario">
-          <img src="assets/img/catanacomics.svg" />
+          <img src={props.imagem} />
           <div class="texto">
-            <strong>catanacomics</strong>
+            <strong>{props.usuario}</strong>
             <span>
-              Catana
-              <ion-icon name="pencil"></ion-icon>
+              {props.nome}
+              <ion-icon  name="pencil"></ion-icon>
             </span>
           </div>
         </div>
     )
+}
+
+function editar(){
+  alert('funcionando')
 }

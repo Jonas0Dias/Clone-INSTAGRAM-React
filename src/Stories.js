@@ -6,8 +6,12 @@ export default function Stories() {
 
     return (
         <div class='stories'>
-        {stories.map(s => <Story imagem={s.imagem} texto={s.texto}/>)}
+            {stories.map(s => <Story imagem={s.imagem} texto={s.texto} />)}
+            <div class="setinha">
+                <ion-icon name="chevron-forward-circle"></ion-icon>
+            </div>
         </div>
+
     )
 }
 
