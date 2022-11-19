@@ -2,10 +2,12 @@
 import React from 'react'
 export default function Posts() {
 
+
+  //Criando um array de objetos. Este array tem exatamente as mesmas propriedades que foram definir na tag <Post> na linha 13
   const posts = [{ perfil: 'assets/img/eu.jpg', imagem: 'assets/img/praia.jpeg', texto: 'Jonas Dias' , likes: 985}, { perfil: 'assets/img/eu.jpg', imagem: 'assets/img/bb.jpg', texto: 'Jonas Dias' , likes: 911},{ perfil: 'assets/img/eu.jpg', imagem: 'assets/img/anjo.jpg', texto: 'Jonas Dias' , likes: 1085},{ perfil: 'assets/img/eu.jpg', imagem: 'assets/img/balerion.jpg', texto: 'Jonas Dias' , likes: 895}]
 
 
-
+//o map está pegando cada elementoda variavel posts e rederizando a função Posts logo abaixo, Mudando apenas as propriedades p.blablabla
   return (
         <div class='posts'>
           {posts.map(p => <Post perfil={p.perfil} texto={p.texto} imagem={p.imagem} likes={p.likes}/>)}
@@ -15,11 +17,12 @@ export default function Posts() {
 
 
 function Post(props) {
+  //variaveis de estado. Recebem um valor inicial no react.useState, mas são alteradas quando a função Set é chamada e passado o novo valor como parametro da função set
   const[salvar, setSalvar] = React.useState('bookmark-outline')
   const[like, setLike] = React.useState('heart-outline')
   const[curtidas, setLikes] = React.useState(props.likes)
   return (
-    <div class="post">
+    <div class="post" >
       <div class="topo">
         <div class="usuario">
           <img src={props.perfil} />
@@ -30,8 +33,15 @@ function Post(props) {
         </div>
       </div>
 
-      <div class="conteudo">
-        <img src={props.imagem} />
+      <div class="conteudo" onDoubleClick = {() => {
+        if (like==='heart-outline'){
+          setLike('heart')
+          setLikes(curtidas+1)
+        }
+
+  
+      }}>
+        <img   src={props.imagem} />
       </div>
 
       <div class="fundo">
