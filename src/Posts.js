@@ -21,6 +21,7 @@ function Post(props) {
   const [salvar, setSalvar] = React.useState('bookmark-outline')
   const [like, setLike] = React.useState('heart-outline')
   const [curtidas, setLikes] = React.useState(props.likes)
+  const[cor, setCor] = React.useState('black')
   return (
     <div class="post" data-test='post' >
       <div class="topo">
@@ -37,7 +38,7 @@ function Post(props) {
         if (like === 'heart-outline') {
           setLike('heart')
           setLikes(curtidas + 1)
-
+          setCor('red')
         }
 
 
@@ -51,15 +52,18 @@ function Post(props) {
       <div class="fundo">
         <div class="acoes">
           <div>
-            <ion-icon name={like} onClick={() => {
+            <ion-icon style={{color: cor}} name={like} onClick={() => {
               if (like === 'heart-outline') {
                 setLike('heart')
                 setLikes(curtidas + 1)
+                setCor('red')
+                
               }
 
               else {
                 setLike('heart-outline')
                 setLikes(curtidas - 1)
+                setCor('black')
               }
 
             }}>
