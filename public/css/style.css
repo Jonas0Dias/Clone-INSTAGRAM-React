@@ -25,6 +25,14 @@ body {
   z-index: 2;
 }
 
+.bigheart{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  color: white;
+  top:42%;
+  right:42%
+}
 .navbar ion-icon, .navbar img {
   cursor: pointer;
 }

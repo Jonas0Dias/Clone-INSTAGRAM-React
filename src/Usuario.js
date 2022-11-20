@@ -8,13 +8,13 @@ export default function Usuario(props){
   
 
     return(
-        <div class="usuario">
-          <img onClick={() => url = setPropsUrl(prompt('Cole a nova url da imagem'))} src={url} />
+        <div class="usuario" data-teste='user'>
+          <img data-teste='profile-image' onClick={() => url = setPropsUrl(prompt('Cole a nova url da imagem'))} src={url} />
           <div class="texto">
             <strong>{props.usuario}</strong>
-            <span>
+            <span data-teste='name'>
               {usuario}
-              <ion-icon onClick={() => setPropsUsuario(prompt('Digite o novo nome de usuário'))} name="pencil"></ion-icon>
+              <ion-icon data-teste='edit-name' onClick={() => setPropsUsuario(prompt('Digite o novo nome de usuário'))} name="pencil"></ion-icon>
             </span>
           </div>
         </div>
