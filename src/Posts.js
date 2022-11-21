@@ -22,6 +22,7 @@ function Post(props) {
   const [like, setLike] = React.useState('heart-outline')
   const [curtidas, setLikes] = React.useState(props.likes)
   const[cor, setCor] = React.useState('black')
+  const[display, setDisplay] = React.useState('none')
   return (
     <div class="post" data-test='post' >
       <div class="topo">
@@ -39,13 +40,18 @@ function Post(props) {
           setLike('heart')
           setLikes(curtidas + 1)
           setCor('red')
+          setDisplay('block')
+          setInterval(() => {
+            setDisplay('none')
+          }, 1500);
+
         }
 
 
       }}>
-        {/* <div className='bigheart'>
-          <ion-icon style={{ width: '100px' , height: '100px'  }} name="heart"></ion-icon>
-        </div> */}
+        <div className='bigheart'>
+          <ion-icon style={{ width: '100px' , height: '100px', display: display }} name="heart"></ion-icon>
+        </div>
         < img data-teste='post-image' src={props.imagem} />
       </div >
 
@@ -82,6 +88,7 @@ function Post(props) {
             Curtido por <strong>Mozão</strong> e outras <strong> {curtidas} </strong> pessoas
           </div>
         </div>
+        
       </div>
     </div >
 
